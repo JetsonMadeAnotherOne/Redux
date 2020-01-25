@@ -1,17 +1,10 @@
-import { combineReducers } from 'redux'
-import { pageReducer } from './page'
-import { userReducer } from './user'
+import {combineReducers} from 'redux'
+import {pageReducer} from './page'
+
 
 export const rootReducer = combineReducers({
-  page: pageReducer,
-  user: userReducer,
+    page: pageReducer,
 })
 
 
-export const initialState = {
-  user: { // мы вложили в user вместо строки, объект
-    name: 'Василий',
-    surname: 'Реактов',
-    age: 27,
-  },
-}
+

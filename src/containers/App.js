@@ -1,36 +1,43 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { User } from '../components/User'
-import { Page } from '../components/Page'
-import { getPhotos } from '../actions/PageActions'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {Page} from '../components/Page'
+import {getColor} from '../actions/PageActions'
+
 class App extends Component {
-  render() {
-    const { user, page, getPhotosAction } = this.props
-    return (
-      <div className="app">
-        <Page
-          photos={page.photos}
-          year={page.year}
-          isFetching={page.isFetching}
-          getPhotos={getPhotosAction}
-        />
-        <User name={user.name} />
-      </div>
-    )
-  }
+    render() {
+        const {page, getColorAction} = this.props
+
+        const styleBlue = {
+            background: "blue"
+        }
+        const styleRed = {
+            background: "red"
+        }
+
+        return (
+            <div className="app">
+                <div style={page.isClicked ? styleBlue : styleRed} className="box"> </div>
+                <Page
+                    isClicked={page.isClicked}
+                    getColor={getColorAction}
+                />
+
+            </div>
+        )
+    }
 }
+
 const mapStateToProps = store => {
-  return {
-    user: store.user,
-    page: store.page,
-  }
+    return {
+        page: store.page,
+    }
 }
 const mapDispatchToProps = dispatch => {
-  return {
-    getPhotosAction: year => dispatch(getPhotos(year)),
-  }
+    return {
+        getColorAction: () => dispatch(getColor()),
+    }
 }
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(App)

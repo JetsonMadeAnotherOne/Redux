@@ -1,27 +1,23 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Page} from '../components/Page'
+import {ComponentButton} from '../components/ComponentButton'
+import {ComponentDiv} from '../components/ComponentDiv'
 import {getColor} from '../actions/PageActions'
+
 
 class App extends Component {
     render() {
         const {page, getColorAction} = this.props
-
-        const styleBlue = {
-            background: "blue"
-        }
-        const styleRed = {
-            background: "red"
-        }
-
         return (
             <div className="app">
-                <div style={page.isClicked ? styleBlue : styleRed} className="box"> </div>
-                <Page
+                <ComponentDiv
                     isClicked={page.isClicked}
                     getColor={getColorAction}
                 />
-
+                <ComponentButton
+                    isClicked={page.isClicked}
+                    getColor={getColorAction}
+                />
             </div>
         )
     }

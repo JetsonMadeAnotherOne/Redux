@@ -19,6 +19,5 @@ export class ComponentDiv extends React.Component {
 }
 
 ComponentDiv.propTypes = {
-    getColor: PropTypes.func.isRequired,
     isClicked: PropTypes.bool.isRequired,
 }

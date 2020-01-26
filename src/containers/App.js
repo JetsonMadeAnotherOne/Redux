@@ -12,7 +12,6 @@ class App extends Component {
             <div className="app">
                 <ComponentDiv
                     isClicked={page.isClicked}
-                    getColor={getColorAction}
                 />
                 <ComponentButton
                     isClicked={page.isClicked}

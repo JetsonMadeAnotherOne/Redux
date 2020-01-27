@@ -7,7 +7,7 @@ const initialState = {
 export function pageReducer(state = initialState, action) {
     switch (action.type) {
         case GET_COLOR:
-            return {...state, isClicked: true};
+            return {...state, isClicked: !state.isClicked};
         default:
             return state
     }

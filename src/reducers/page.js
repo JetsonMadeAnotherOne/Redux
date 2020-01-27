@@ -4,10 +4,10 @@ const initialState = {
     isClicked: false,
 }
 
-export function pageReducer(state = initialState, action) {
+export function pageReducer(state = initialState, action,props) {
     switch (action.type) {
         case GET_COLOR:
-            return {...state, isClicked: true}
+            return {...state, isClicked: !initialState.isClicked};
         default:
             return state
     }

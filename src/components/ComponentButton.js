@@ -16,5 +16,4 @@ export class ComponentButton extends React.Component {
 
 ComponentButton.propTypes = {
     getColor: PropTypes.func.isRequired,
-    isClicked: PropTypes.bool.isRequired,
 }

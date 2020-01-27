@@ -3,7 +3,7 @@ import {pageReducer} from './page'
 
 
 export const rootReducer = combineReducers({
-    page: pageReducer,
+    page: pageReducer
 })
 
 

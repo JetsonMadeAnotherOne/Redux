@@ -11,10 +11,9 @@ class App extends Component {
         return (
             <div className="app">
                 <ComponentDiv
-                    isClicked={page.isClicked}
+                    background={page.background}
                 />
                 <ComponentButton
-                    isClicked={page.isClicked}
                     getColor={getColorAction}
                 />
             </div>
